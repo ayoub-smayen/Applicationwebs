@@ -1,0 +1,225 @@
+https://www.google.com/search?q=mario&hl=fr&sxsrf=ACYBGNQlcere3wUZElK4jWEy3FeCGjt6EA:1578325755039&source=lnms&tbm=isch&sa=X&ved=2ahUKEwiA8N
+
+_Pqe_mAhUBsXEKHaEuA0wQ_AUoAXoECBIQAw&biw=1366&bih=657#imgrc=_
+<html>
+<head>
+<style>
+.cf:before,
+.cf:after {
+	content: " ";
+	display: table;
+}
+
+.cf:after {
+	clear: both;
+}
+
+.conteiner {
+	max-width: 940px;
+	padding: 10px;
+	background-color: #F0F0F0;
+	margin: 0 auto;
+}
+
+.gallery {
+	width: 100%;
+}
+
+.gallery-item {
+	float: left;
+	background-color: #FFFFFF;
+	width: 19%;
+	margin: 1%;
+	padding: 2%;
+	padding-bottom: 5%;
+	box-shadow: 1px 1px 3px rgba(0,0,0, 0.2);
+}
+chmod u+x bootstrap.sh
+
+# execute script in the background
+./bootstrap.sh &
+
+# create a new exam
+curl -X POST -H 'Content-Type: application/json' -d '{
+  "title": "TypeScript Advanced Exam",
+  "description": "Tricky questions about TypeScript."
+}' http://0.0.0.0:5000/exams
+
+# retrieve exams
+curl http://0.0.0.0:5000/exams
+
+.gallery-item img {
+	width: 100%; 
+}
+</style>
+</head>
+
+<body>
+<script>
+msbox("hello worlds");
+
+</script>
+</body>
+
+</html>
+<?php
+session_start();
+     if (isset($_GET["login"])){
+          class MyDB extends SQLite3
+   {
+      function __construct()
+      {
+         $this->open('database.db');
+      }
+   }
+   $db = new MyDB();
+   if(!$db){
+      echo $db->lastErrorMsg();
+   } else {
+      //echo "Opened database successfully\n";
+   }
+   $sql ='SELECT * from USERS where USERNAME="'.$_POST["usr_name"].'";';
+   $ret = $db->query($sql);
+   while($row = $ret->fetchArray(SQLITE3_ASSOC) ){
+      $id=$row['ID'];
+      $username=$row["USERNAME"];
+      $password=$row['PASSWORD'];
+  }
+    if ($id!=""){
+        if ($password==$_POST["pwd"]){
+           $_SESSION["login"]=$username;
+           header('Location: index.php');    
+        }else{
+          
+          echo "Wrong Password";
+        }
+      }else{
+       echo "User not exist, please register to continue!";
+      }
+   //echo "Operation done successfully\n";
+   $db->close();
+     }
+?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Log in</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+</head>
+<body>
+<div id="demo">
+<h2>The XMLHttpRequest Object</h2>
+<button type="button" onclick="loadDoc()">Change Content</button>
+</div>
+
+<script>
+function loadDoc() {
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+      document.getElementById("demo").innerHTML =
+      this.responseText;
+    }
+  };
+  xhttp.open("GET", "ajax_info.txt", true);
+  xhttp.send();
+}
+</script>
+
+<form method="get" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>"> 
+E-mail: <input type="text" name="email">
+<input type="submit" name="submit" value="Submit"> 
+</form>
+
+<?php
+if (isset($_GET["email"])) {
+    if (!filter_input(INPUT_GET, "email", FILTER_VALIDATE_EMAIL) === false) {
+        echo("Email is valid");
+    } else {
+        echo("Email is not valid");
+    }
+}
+?>
+$con = mysqli_connect('localhost','peter','abc123','my_db');
+if (!$con) {
+    die('Could not connect: ' . mysqli_error($con));
+}
+
+mysqli_select_db($con,"ajax_demo");
+$sql="SELECT * FROM user WHERE id = '".$q."'";
+$result = mysqli_query($con,$sql);
+
+<div class="container">
+  <h2>Vertical (basic) form</h2>
+  <form role="form" action="localhost:3600/login.php?login=true">
+    <div class="form-group">
+      <label for="usr_name">Username:</label>
+      <input type="text" class="form-control" id="usr_name" placeholder="Enter Username">
+    </div>
+    <div class="form-group">
+      <label for="pwd">Password:</label>
+      <input type="password" class="form-control" id="pwd" placeholder="Enter password">
+    </div>
+    <div class="checkbox">
+      <label><input type="checkbox"> Remember me</label>
+    </div>
+    <button type="submit" class="btn btn-default">Submit</button>
+  </form>
+</div>
+
+</body>
+</html>
+
+
+<html>
+<head>
+<script>
+function showCD(str) {
+  if (str=="") {
+    document.getElementById("txtHint").innerHTML="";
+    return;
+  }
+  if (window.XMLHttpRequest) {
+    // code for IE7+, Firefox, Chrome, Opera, Safari
+    xmlhttp=new XMLHttpRequest();
+  } else {  // code for IE6, IE5
+    xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+  }
+  xmlhttp.onreadystatechange=function() {
+    if (this.readyState==4 && this.status==200) {
+      document.getElementById("txtHint").innerHTML=this.responseText;
+    }
+  }
+  xmlhttp.open("GET","getcd.php?q="+str,true);
+  xmlhttp.send();
+}
+</script>
+</head>
+<body>
+
+<form>
+Select a CD:
+<select name="cds" onchange="showCD(this.value)">
+<option value="">Select a CD:</option>
+<option value="Bob Dylan">Bob Dylan</option>
+<option value="Bee Gees">Bee Gees</option>
+<option value="Cat Stevens">Cat Stevens</option>
+</select>
+</form>
+<div id="txtHint"><b>CD info will be listed here...</b></div>
+
+</body>
+</html>
+https://openclassrooms.com/fr/courses/1916641-dynamisez-vos-sites-web-avec-javascript/1920788-les-images#/id/r-1926878
+<p>
+    <a href="imgs/1.jpg" title="Afficher l'image originale"><img src="imgs/1_min.jpg" alt="Miniature" /></a>
+    <a href="imgs/2.jpg" title="Afficher l'image originale"><img src="imgs/2_min.jpg" alt="Miniature" /></a>
+    <a href="imgs/3.jpg" title="Afficher l'image originale"><img src="imgs/3_min.jpg" alt="Miniature" /></a>
+    <a href="imgs/4.jpg" title="Afficher l'image originale"><img src="imgs/4_min.jpg" alt="Miniature" /></a>
+</p>
+
+<div id="overlay"></div>
